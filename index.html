@@ -29,8 +29,8 @@
 			  		x: data.avg.x/1920*(smoothing/100)+previousPos.x*(1-(smoothing/100)),
 			  		y: data.avg.y/1080*(smoothing/100)+previousPos.y*(1-(smoothing/100))
 			  	};
-			  	//el.style.top = (pos.y*1080)+'px';
-			  	//el.style.left = (pos.x*1920)+'px';
+			  	el.style.top = (pos.y*100)+'%';
+			  	el.style.left = (pos.x*100)+'%';
 			    heatmap.store.addDataPoint(pos.x*1920, pos.y*1080);
 			    previousPos = pos;
 			  });
@@ -38,7 +38,7 @@
 		</script>
 		<style>
 		body {
-			background: #000 url('Scarlett-Johansson-2.jpg') no-repeat center center;
+			background: #000 url('http://wallpoper.com/images/00/36/27/44/landscapes-dinosaurs_00362744.jpg') no-repeat center center;
 			background-size: contain;
 		}
 		body,html,.fullscreen {
@@ -50,6 +50,15 @@
 				margin: 0;
 				padding: 0;
 		}
+		#wrapper {
+			position: absolute;
+			display: block;
+			width: 320px;
+			height: 200px;
+			top: 10px;
+			left: 10px;
+			border: 1px solid white;
+		}
 			#eye {
 				position: absolute;
 				width: 16px;
@@ -60,6 +69,6 @@
 	</head>
 	<body>
 	<div id="heatmapEl" class="fullscreen"></div>
-	<div id="wrapper" class="fullscreen"><div id="eye"></div></div>
+	<div id="wrapper"><div id="eye"></div></div>
 	</body>
 </html>
